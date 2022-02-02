@@ -1,0 +1,41 @@
+{
+  "name": "RegistroMaterialUtilizado",
+  "fields": [
+    {
+      "fieldName": "nombre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cantidad",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "fecha",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "reserva",
+      "otherEntityRelationshipName": "registroMaterialUtilizado",
+      "relationshipName": "reserva"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "material",
+      "otherEntityRelationshipName": "registroMaterialUtilizado",
+      "relationshipName": "material"
+    }
+  ],
+  "entityTableName": "registro_material_utilizado",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20220202133453"
+}

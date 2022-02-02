@@ -1,0 +1,57 @@
+//Entidades
+
+entity Instalacion{
+  nombre String,
+  precioPorHora Double,
+  disponible Boolean
+}
+
+entity Material{
+  nombre String,
+  cantidadReservada Integer,
+  cantidadDisponible Integer
+}
+
+entity RegistroMaterialUtilizado{
+  nombre String,
+  cantidad Integer,
+  fecha LocalDate
+}
+
+entity Cliente{
+  dni String,
+  nombre String,
+  apellidos String,
+  telefono Integer,
+  direccion String,
+  edad String,
+}
+
+entity Reserva{
+  fechaInicio Instant,
+  fechaFin Instant,
+  tipoPago String,
+  total Integer,
+}
+
+entity Penalizacion{
+	motivo String,
+    totalAPagar Double
+}
+
+
+//Relaciones
+relationship ManyToOne{
+	Reserva{cliente} to Cliente,
+	RegistroMaterialUtilizado{reserva} to Reserva,
+	Penalizacion{cliente} to Cliente,
+    Reserva{instalacion} to Instalacion,
+    RegistroMaterialUtilizado to Material,
+    Material{instalacion} to Instalacion,
+}
+
+
+//Ajustes
+paginate all with pagination
+service all with serviceImpl
+dto * with mapstruct

@@ -40,6 +40,8 @@
     "clientPackageManager": "npm",
     "clientThemeVariant": "",
     "languages": ["es", "en"],
-    "enableGradleEnterprise": false
+    "enableGradleEnterprise": false,
+    "entities": ["Instalacion", "Material", "RegistroMaterialUtilizado", "Cliente", "Reserva", "Penalizacion"],
+    "lastLiquibaseTimestamp": 1643808896000
   }
 }

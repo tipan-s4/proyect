@@ -1,0 +1,45 @@
+{
+  "name": "Reserva",
+  "fields": [
+    {
+      "fieldName": "fechaInicio",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "fechaFin",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "tipoPago",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "total",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "cliente",
+      "otherEntityRelationshipName": "reserva",
+      "relationshipName": "cliente"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "instalacion",
+      "otherEntityRelationshipName": "reserva",
+      "relationshipName": "instalacion"
+    }
+  ],
+  "entityTableName": "reserva",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20220202133455"
+}
